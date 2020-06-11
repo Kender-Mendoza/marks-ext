@@ -1,0 +1,9 @@
+{
+    "name": "marks",
+    "manifest_version": 2,
+    "version": "0.0.1",
+    "description": "A simple extention for saves your URLs",
+    "icons": {
+        "128": "icons/128.png"
+    }
+}
