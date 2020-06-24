@@ -1,0 +1,13 @@
+{
+    "name": "marks",
+    "manifest_version": 2,
+    "version": "0.0.1",
+    "description": "A simple extention for saves your URLs",
+    "browser_action":{
+        "default_icon":"icons/128.png",
+        "default_popup":"popup.html"
+    },
+    "icons": {
+        "128": "icons/128.png"
+    }
+}
