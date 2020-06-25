@@ -40,6 +40,30 @@ body{
 }
     .container{
     }
-
+/* ? HEADER */
     .header{
+        height: 50px;        
+        background-color: var(--first-color-glass);
+        font-family: var(--MuseoModerno);
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 var(--gutter);
     }
+        .title{
+            color: var(--first-color);
+        }
+        .icon-add{
+            display: block;
+            width: 1.5em;
+            color: var(--first-color-glass);
+            transition: transform .3s;
+        }
+        .icon-add:hover{
+            cursor: pointer;
+            color: var(--first-color);
+            transform: scale(1.3);
+        }
+
+
