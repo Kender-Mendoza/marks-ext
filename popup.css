@@ -42,6 +42,7 @@ body{
         height: 100%;
         width: 100%;
         background: var(--first-color-glass);
+        padding-top: 50px;
     }
     
 /* ? HEADER */
@@ -83,16 +84,53 @@ body{
             border-bottom-color: var(--first-color);
             transform: scale(1.1) ;
         }
-        .icon-add{
+        .icon-add, .icon-delete{
             display: block;
             width: 1.5em;
             color: var(--first-color-glass);
             transition: transform .3s;
         }
-        .icon-add:hover{
+        .icon-add:hover, .icon-delete:hover{
             cursor: pointer;
             color: var(--first-color);
             transform: scale(1.3);
         }
+/* ? MARKERS */
+        .marker{
+            height: 40px;
+            width: 100%;
+            padding: 0 var(--gutter);
 
+            display: flex;
+            align-items: center;
 
+            position: relative;
+            transition: background;
+            transition-duration: .7s;
+        }
+        .marker:hover{
+            background-color: var(--second-color);
+            cursor: pointer;
+        }
+
+            .page-logo{
+                height: 32px;
+                width: 32px;
+                margin-right: var(--gutter);
+                filter: grayscale(100%);
+            }
+            .page-name{
+                font-family: var(--MuseoModerno);
+                font-size: 1.3rem;
+                font-weight: var(--ligth);
+                color: var(--first-color-glass);
+            }
+            /* 
+            ? Estilos que sustituiran los no deseados
+            ? que se le asignan a los icons
+            */
+            .icon-delete{
+                width: 1.2em;
+                position: absolute;
+                right: var(--gutter);
+            }
