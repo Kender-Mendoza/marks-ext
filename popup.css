@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;500&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --gutter: 1em;
 
     --MuseoModerno: 'MuseoModerno', cursive;
@@ -17,9 +17,9 @@
     --first-color-glass: #e0dede;
     --second-color: #6a197d; */
 
-    --first-color: rgb(255,255,255);
-    --first-color-glass: rgba(255,255,255,.5);
-    --first-color-more-glass: rgba(255,255,255,.2);
+    --first-color: rgb(255, 255, 255);
+    --first-color-glass: rgba(255, 255, 255, .5);
+    --first-color-more-glass: rgba(255, 255, 255, .2);
     --second-color: #6a197d;
 }
 
@@ -27,119 +27,147 @@
 TODO: hacer pruebas antes de crear el commit, probar si los tonos de colores son los correctos, tambien verificar si lo del scroll funciona la linia completa  
 */
 
-body{
+body {
     height: 500px;
     width: 350px;
 }
 
-.background{
+.background {
     height: 100%;
     width: 100%;
-    
-    background-image: linear-gradient( 111.1deg,  rgba(0,40,70,1) -4.8%, rgba(255,115,115,1) 82.7%, rgba(255,175,123,1) 97.2% );
+
+    background-image: linear-gradient(111.1deg, rgba(0, 40, 70, 1) -4.8%, rgba(255, 115, 115, 1) 82.7%, rgba(255, 175, 123, 1) 97.2%);
+
 }
-    .container{
-        height: 100%;
-        width: 100%;
-        background: var(--first-color-glass);
-        padding-top: 50px;
 
-        overflow-y: scroll;
-    }
-    .container::-webkit-scrollbar{
-        width: 5px;
-    }
-    .container::-webkit-scrollbar-thumb{
-        background-color: var(--first-color);
-    }
-    
+.container {
+    height: 100%;
+    width: 100%;
+    background: var(--first-color-glass);
+    padding-top: 50px;
+
+    overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: var(--first-color);
+}
+
 /* ? HEADER */
-    .header{
-        width: 100%;
-        height: 50px;        
-        font-family: var(--MuseoModerno);
-        
-        padding: 0 var(--gutter);
-        
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.header {
+    width: 345px;
+    height: 50px;
+    font-family: var(--MuseoModerno);
 
-        position: fixed;
-        top: 0;
-    }
-        .title{
-            color: var(--first-color);
-        }
-        [placeholder]{ /* ? Input add marker */
-            background: none;
-            outline: none; /* ? Elimina los bordes del focus*/
-            border: none;
-            border-bottom: 2px solid var(--first-color-glass);
-            
-            width: 200px;
-            padding: 0 5px;
-            margin:  0  0 10px; /* ! se hiso al tanteo */
-            
-            color: var(--first-color);
-            font-family: var(--MuseoModerno);
-            font-weight: var(--ligth);
-            font-size: 1rem;
-            
-            transition: transform .3s;
-        }
-        [placeholder]:focus{
-            border-bottom-color: var(--first-color);
-            transform: scale(1.1) ;
-        }
-        .icon-add, .icon-delete{
-            display: block;
-            width: 1.5em;
-            color: var(--first-color-glass);
-            transition: transform .3s;
-        }
-        .icon-add:hover, .icon-delete:hover{
-            cursor: pointer;
-            color: var(--first-color);
-            transform: scale(1.3);
-        }
+    position: fixed;
+    top: 0;
+
+    z-index: 100;
+    background-image: 
+        linear-gradient(111.1deg, rgba(0, 40, 70, 1) -4.8%, rgba(255, 115, 115, 1) 82.7%, rgba(255, 175, 123, 1) 97.2%)
+    ;
+
+    background-size: 345px 500px;
+    background-repeat: no-repeat;
+}
+
+.header-container{
+    background-color: var(--first-color-glass);
+    padding: 0 var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.title {
+    color: var(--first-color);
+}
+
+[placeholder] {
+    /* ? Input add marker */
+    background: none;
+    outline: none;
+    /* ? Elimina los bordes del focus*/
+    border: none;
+    border-bottom: 2px solid var(--first-color-glass);
+
+    width: 200px;
+    padding: 0 5px;
+    /* ! se hiso al tanteo */
+    margin: 0 0 10px;
+
+    color: var(--first-color);
+    font-family: var(--MuseoModerno);
+    font-weight: var(--ligth);
+    font-size: 1rem;
+
+    transition: transform .3s;
+}
+
+[placeholder]:focus {
+    border-bottom-color: var(--first-color);
+    transform: scale(1.1);
+}
+
+.icon-add,
+.icon-delete {
+    display: block;
+    width: 1.5em;
+    color: var(--first-color-glass);
+    transition: transform .3s;
+}
+
+.icon-add:hover,
+.icon-delete:hover {
+    cursor: pointer;
+    color: var(--first-color);
+    transform: scale(1.3);
+}
+
 /* ? MARKERS */
-        .marker{
-            height: 40px;
-            width: 100%;
-            padding: 0 var(--gutter);
+.marker {
+    height: 40px;
+    width: 100%;
+    padding: 0 var(--gutter);
 
-            display: flex;
-            align-items: center;
+    display: flex;
+    align-items: center;
 
-            position: relative;
-            transition: background;
-            transition-duration: .7s;
-        }
-        .marker:hover{
-            background-color: var(--second-color);
-            cursor: pointer;
-        }
+    position: relative;
+    transition: background;
+    transition-duration: .7s;
+}
 
-            .page-logo{
-                height: 32px;
-                width: 32px;
-                margin-right: var(--gutter);
-                filter: grayscale(100%);
-            }
-            .page-name{
-                font-family: var(--MuseoModerno);
-                font-size: 1.3rem;
-                font-weight: var(--ligth);
-                color: var(--first-color-glass);
-            }
-            /* 
+.marker:hover {
+    background-color: var(--second-color);
+    cursor: pointer;
+}
+
+.page-logo {
+    height: 32px;
+    width: 32px;
+    margin-right: var(--gutter);
+    filter: grayscale(100%);
+}
+
+.page-name {
+    font-family: var(--MuseoModerno);
+    font-size: 1.3rem;
+    font-weight: var(--ligth);
+    color: var(--first-color-glass);
+}
+
+/* 
             ? Estilos que sustituiran los no deseados
             ? que se le asignan a los icons
             */
-            .icon-delete{
-                width: 1.2em;
-                position: absolute;
-                right: var(--gutter);
-            }
-
+.icon-delete {
+    width: 1.2em;
+    position: absolute;
+    right: var(--gutter);
+}
