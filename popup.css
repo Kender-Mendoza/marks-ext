@@ -141,6 +141,8 @@ body {
     position: relative;
     transition: background;
     transition-duration: .7s;
+
+    text-decoration: none;
 }
 
 .marker:hover {
