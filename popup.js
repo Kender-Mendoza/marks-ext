@@ -26,20 +26,31 @@ const getElementSaved = () => {
 }
 getElementSaved()
 
+// ? delete elemento
+const deleteElement = () => {
+    const elements = document.getElementsByClassName("icon-delete")
+    for (const iterator of elements) {
+        iterator.addEventListener('click',(e)=>{
+            e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode)
+        })
+    }
+}
+deleteElement()
+
 // ? esta funcion agrega los alementos (markers) 
 const addEvent = () => {
     const input = document.getElementById('input')
     document.getElementById('btn-add').addEventListener('click', () => {
-    if (input.value) {
-        let url = input.value
-        // guardando elemento en el local storange
-        addElement(url)
-        localStorage.setItem(url, url)
-        addEvent()
-        /* utiliza recursion para reasignar los eventos al head, aun no se si
-            esta solucion es la correcta.*/
-    }
+        if (input.value) {
+            let url = input.value
+            // guardando elemento en el local storange
+            addElement(url)
+            localStorage.setItem(url, url)
+            addEvent()
+            deleteElement()
+            /* utiliza recursion para reasignar los eventos al head, aun no se si
+                esta solucion es la correcta.*/
+        }
     })
 }
 addEvent()
-
