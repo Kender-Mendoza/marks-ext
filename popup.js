@@ -11,7 +11,7 @@ const addElement = (url) => {
             class="svg-inline--fa fa-times fa-w-11 icon-delete" role="img" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 352 512">
             <path fill="currentColor"
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" class="btn-delete">
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" class="btn-delete" id="${url.trim()}">
             </path>
         </svg>
     </div>
@@ -28,6 +28,11 @@ const getElementSaved = () => {
 }
 getElementSaved()
 
+// ? eliminar elemento del storange
+const deleteElementSaved = (key) =>{
+    localStorage.removeItem(key)
+}
+
 // ? delete elemento
 const deleteElement = () => {
     const elements = document.getElementsByClassName("btn-delete")
@@ -37,7 +42,7 @@ const deleteElement = () => {
             let marker = e.target.parentNode.parentNode // ? selecciona el marker
 
             markerContainer.removeChild(marker) // ? eliminando dela vista
-            // ? eliminando desde el storange
+            deleteElementSaved(e.target.id) // ? eliminando desde el storange
         })
     }
 }
