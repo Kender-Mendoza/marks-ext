@@ -4,7 +4,7 @@ const createElementHtml = (url) => {
     const element = `
     <div class="marker" id="${url}">
         <a href="http://www.${url}" target="_blank" class="info-container">
-            <img src="https://www.freeiconspng.com/uploads/pikachu-png-icon-6.png   " alt="page logo"
+            <img src="https://cdn.svgporn.com/logos/${url.slice(0,-4)}.svg" alt="page logo"
                 class="page-logo">
             <p class="page-name">${url}</p>
         </a>

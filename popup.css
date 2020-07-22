@@ -124,7 +124,6 @@ form{
 .marker {
     display: flex;
     align-items: center;
-
     position: relative;
 
     transition: background;
@@ -146,8 +145,8 @@ form{
     text-decoration: none;
 }
 .page-logo {
-    height: 32px;
-    width: 32px;
+    height: 16px;
+    width: 16px;
     margin-right: var(--gutter);
     filter: grayscale(100%);
 }
