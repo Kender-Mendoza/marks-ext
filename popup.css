@@ -66,6 +66,12 @@ body {
     color: var(--first-color);
 }
 
+form{
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
 [placeholder] {
     /* ? Input add marker */
     background: none;
@@ -90,6 +96,13 @@ body {
 [placeholder]:focus {
     border-bottom-color: var(--first-color);
     transform: scale(1.1);
+}
+
+.btn-add{
+    background: transparent;
+    border: none;
+    margin-left: var(--gutter);
+    outline: none;
 }
 
 .icon-add,

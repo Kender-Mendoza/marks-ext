@@ -20,7 +20,7 @@ const createElementHtml = (url) => {
     return element
 }
 
-const deleteElementHtml = () => {
+const deleteElement = () => {
     const btnsDelete = document.getElementsByClassName("btn-delete")
     for (const btn of btnsDelete) {
         btn.addEventListener('click', (e) => {
@@ -35,8 +35,10 @@ const deleteElementHtml = () => {
 correspondientes, ya que al agregar elementos nuevos a la vista en
 este caso el contenedor, estos se renderizan por cada elemento que
 se agrega, por esta razon se les debe de reasignar los eventos */
-const addElementHtml = () => {
-    document.getElementById('btn-add').addEventListener('click', () => {
+const addElement = () => {
+    document.getElementById('form').addEventListener('submit', (e) => {
+        e.preventDefault(false)
+
         let url = document.getElementById('input').value.trim()
 
         if (url) {
@@ -47,8 +49,8 @@ const addElementHtml = () => {
             // ? limpiando el input
             url.value = ''
             // ? reasignando los eventos
-            addElementHtml()
-            deleteElementHtml()
+            addElement()
+            deleteElement()
         }
     })
 }
@@ -60,8 +62,8 @@ const showElementsSaved = () => {
         }
     }
 
-    addElementHtml()
-    deleteElementHtml()
+    addElement()
+    deleteElement()
 }
 
 showElementsSaved()
